@@ -23,7 +23,7 @@ module.exports.uploadCSV = async function(req,res){
             //save csv data to db
             if(req.file){
                 const oldPath = req.file.path
-                const newPath = path.join(__dirname,'../uploads',req.file.originalname);
+                const newPath = path.join('/tmp',req.file.originalname);
                 fs.rename(oldPath,newPath,(err)=>{
                     if(err){
                         throw err;
