@@ -55,7 +55,7 @@ module.exports.viewCSV = async function(req,res){
         if(!csvFile){
             return res.status(400).send("File not found");
         }
-        const fileLocation = path.join('/tmp');
+        const fileLocation = join('/tmp');
         const fileData = await new Promise((resolve,reject)=>{
             fs.readFile(path.join(fileLocation,csvFile.filename),'utf8',(err,data)=>{
                 if(err){
