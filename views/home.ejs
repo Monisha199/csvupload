@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>
+        </title>
+    </head>
+    <style>
+        body{
+            background-color:lavender;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .text{
+            text-align: center;
+        }
+
+        div{
+            border: 2px dashed black;
+            width: 500px;
+            margin: auto;
+        }
+
+        table{
+            margin: auto;
+        }
+    </style>
+    <body> 
+        <link rel="stylesheet" href="">
+        <h1>CSV File system </h1>
+        <div>
+            <form action="/upload-csv"  method="post" enctype="multipart/form-data">
+                <br/>
+                <label for="csvFile">Select a CSV file to upload :</label>
+                <input type="file" accept=".csv" name="csv" id="csvFile"/><br/> <br/> <!-- name should be  --> 
+                <input type="submit" value="Submit"/>
+            </form>
+            </div>
+        <br/>
+        <h3>Uploaded Files</h3>
+        <table>
+            <thead>
+              <tr>
+                <th>Filename</th>
+                <th> </th>
+                <th> </th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+                <%  for (file of files){%>
+                <tr>
+                    <td><%=file.filename %></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="/csv/<%= file._id%>"> View</a></td>
+                </tr>
+            <%};%>
+           
+        </tbody>
+    </table>
+    
+   
+    <script src=""></script>  
+
+    </body>
+</html>  
