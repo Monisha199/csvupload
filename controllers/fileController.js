@@ -26,6 +26,7 @@ module.exports.uploadCSV = async function(req,res){
                 const newPath = path.join('/tmp',req.file.originalname);
                 fs.rename(oldPath,newPath,(err)=>{
                     if(err){
+                        console.log("Im error coming from here");
                         throw err;
                     }
                 });
